@@ -1,0 +1,690 @@
+/* =====================================
+   Global CSS Variables
+===================================== */
+:root {
+  --emaar-accent-1: #0F3D3A;
+  --emaar-accent-2: #C8F8A9;
+  --emaar-accent-3: #F2F5F1;
+  --emaar-accent-4: #F8F7F3;
+  --emaar-accent-5: #FFFFFF;
+  --emaar-accent-6: #000000;
+  --emaar-accent-7: #0000001A;
+  --emaar-accent-8: #00000099;
+  /*/ bg emaar*/ 
+  --sticky-header-bg: #0F3D3ACC;
+  --white-80: #FFFFFF80;
+  --brand-secondary: #1F6E69;
+  --black-75: rgba(0, 0, 0, 0.75);
+  --brand-overlay: #0F3D3A66;
+
+  /* Fonts */
+  --font-primary: "DM Sans", sans-serif;
+  --font-secondary: "Forum", sans-serif;
+}
+
+/* =====================================
+   Global Styles
+===================================== */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+body {
+  font-family: var(--font-primary);
+}
+/* =====================================
+   Headings
+===================================== */
+h1 {
+  font-size: 50px;
+  font-weight: 400;
+  font-family: var(--font-secondary);
+}
+h2 {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: var(--font-secondary);
+  color: var(--emaar-accent-6);
+}
+h4 {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--font-primary);
+  color: var(--emaar-accent-6);
+}
+h5 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--font-primary);
+}
+/* =====================================
+   Paragraph
+===================================== */
+p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 15px;
+  color: var(--black-75);
+}
+/* =====================================
+   Links
+===================================== */
+a {
+  color: var(--emaar-accent-1);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--brand-secondary);
+}
+/* =====================================
+   Section
+===================================== */
+.section{
+  padding: 100px 0px;
+}
+/* =====================================
+   Navbar Menu Styles
+===================================== */
+header.header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  top: 20px;
+}
+.navbar{
+  padding: 10px 0px;
+  max-width: 1280px;
+  margin: auto;
+  border-radius: 8px;
+}
+.navbar .nav-link {
+  color: #000;
+  transition: all 0.2s ease-in-out;
+  font-family:var(--font-primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  background-color: #f1f1f1;
+  color: #0F3D3A;
+}
+.fill-btn{
+  padding:12px 12px;
+  column-gap: 40px;
+  background: var(--emaar-accent-2);
+  color: var(--emaar-accent-1);
+  border: none;
+  font-weight: 500;
+  font-family:var(--font-primary);
+  font-size: 14px;
+}
+.outline-btn{
+  padding:12px 12px;
+  column-gap: 40px;
+  border:1px solid var(--emaar-accent-1);
+  color: var(--emaar-accent-1);
+  font-weight: 500;
+  font-family:var(--font-primary);
+  font-size: 14px;
+  background: transparent;
+}
+.content-btn{
+  width: fit-content;
+}
+.fill-btn:hover{
+  background:var(--emaar-accent-1);  
+}
+.outline-btn:hover{
+  background:var(--emaar-accent-1);  
+}
+
+/* =====================================
+    Hero section
+===================================== */
+.hero-section{
+  background: url('../img/hero-Emaar.jpg');
+  background-size: cover;
+  background-position: center center;
+  min-height: clamp(300px, 90vh, 830px);
+  position: relative;
+  display: flex;
+  align-items: end;
+}
+.hero-section:before{
+  background-image: linear-gradient(190deg, #134A4700 25% 25%, #0F3D3AF2 95%);
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+}
+.hero-content{
+  position: relative;
+  padding-bottom: 50px;
+}
+.hero-text-wrap{
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 10px;
+}
+.hero-text-wrap h1{
+  color: var(--emaar-accent-3);
+  margin: 0;
+}
+.hero-text-wrap img{
+  height: 30px;
+  width: fit-content;
+  margin:0px 0px 25px 0px;
+}
+.hero-sub-heading-title{
+  font-size: 33px;  
+}
+.hero-text-wrap .btn{
+  margin-top: 20px;
+}
+
+/* =====================================
+    About
+===================================== */
+section.about{
+  padding: 100px 0px 50px 0px;
+}
+.sec-sub-heading{
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  border-left: 3px solid var(--emaar-accent-1);
+  padding: 0px 15px;
+  color: var(--emaar-accent-1);
+  display: block;
+  margin: 0px 0px 40px 0px;
+}
+.heading-flex{
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+.heading-title{
+  flex:0 0 60%;
+}
+.heading-title h2{
+  line-height: 3.5rem;
+}
+.heading-para p{
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+.heading-center{
+  text-align: center;
+}
+.heading-center .sec-sub-heading{
+  border-left: none;
+}
+.heading-center .heading-flex{
+  flex-direction: column;
+}
+.about-detail-section{
+  background: var(--emaar-accent-3);
+  padding: 50px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
+}
+.about-d-flx{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 100px;
+  margin: 0px 0px 50px 0px;
+}
+.about-d-content{
+  border-left: 1px solid var(--emaar-accent-7);
+  padding: 0px 0px 0px 30px;
+  position: relative;
+}
+.about-d-content:before{
+  content: '';
+  position: absolute;
+  left: -1px;
+  width: 1px;
+  height: 40px;
+  background: var(--emaar-accent-1);
+}
+.about-d-content h5{
+  color: var(--emaar-accent-6);
+  margin-bottom: 20px;
+}
+.about-d-content p{
+  font-size: 15px;
+  line-height: 1.4rem; 
+  margin-bottom: 0;
+}
+.about-sc-img{
+  text-align: center;
+  padding: 0px 0px;
+  position: relative;
+}
+.about-sc-img img{
+  width: 100%;
+  border-radius: 0px 0px 0px 0px;
+}
+.btn-position-bottomleft{
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+}
+/* =====================================
+    Experience section
+===================================== */
+.experience-sec-row{
+  padding: 50px 0px 0px 0px;
+}
+.experiencecard{
+  min-height: 245px;
+  border-radius: 8px;
+  padding: 20px 20px;
+  border: 0.5px solid var(--emaar-accent-7);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.experiencecard:hover{
+  background: var(--emaar-accent-2)
+}
+.experiencecard.active{
+  background: var(--emaar-accent-2)
+}
+.schedule-card{
+  padding: 25px 25px;
+  background: var(--emaar-accent-1);
+  border-radius: 8px;
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.schedule-card h2{
+  font-size: 40px;
+  color: var(--emaar-accent-5); 
+}
+
+/* =====================================
+    Payment Plan
+===================================== */
+.paymentplan-sc{
+  padding:50px 0px 100px 0px; 
+}
+.paymentplan-content .sec-sub-heading{
+  margin:0px 0px 20px 0px;
+}
+.paymentplan-content .heading-para{
+  padding: 20px 0px 0px 0px;
+}
+.button-group-block{
+  padding: 30px 0px 0px 0px;
+  display: flex;
+  column-gap: 20px;
+}
+.paymentplan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.paymentplan-block {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.paymentplan-block h2 {
+  min-width: 160px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-secondary);
+  font-size: 48px;
+  font-weight: 400;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    var(--emaar-accent-1) 0%,
+    var(--brand-secondary) 100%
+  );
+  border-radius: 12px;
+  position: relative;
+}
+.paymentplan-block h2::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 0;
+  width: 36px;
+  height: 100%;
+  background: #fff;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+.paymentplan-text span {
+  display: block;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: var(--font-secondary);
+  color: var(--emaar-accent-6);
+  margin-bottom: 6px;
+}
+.paymentplan-text p {
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--black-75);
+}
+
+/* =====================================
+    Location
+===================================== */
+.location-sc{
+  background: var(--emaar-accent-4);
+  padding-bottom: 0;
+}
+.location-map{
+  padding: 50px 0px 0px 0px;
+}
+.location-map img{
+  width: 100%;
+}
+.location-details{
+ background: var(--emaar-accent-1); 
+ padding: 30px 0px;
+}
+.location-row {
+  align-items: center;
+}
+.location-item {
+  display: flex;
+  justify-content: center;
+}
+.location-inner {
+  padding: 20px 10px;
+}
+.location-inner strong {
+  font-family: var(--font-secondary);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--emaar-accent-2);
+}
+.location-inner span {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--emaar-accent-2);
+  opacity: 0.85;
+}
+.location-inner p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #ffffff;
+  opacity: 0.9;
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.location-item:not(:last-child) {
+  border-right: 1px dashed rgba(255, 255, 255, 0.25);
+}
+
+/* =====================================
+    contact us
+===================================== */
+.inquiry-wrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.inquiry-image img {
+  object-fit: cover;
+  object-position: 14%;
+}
+.inquiry-form {
+  background: #ffffff;
+}
+.form-header {
+  background: var(--emaar-accent-1);
+  color: #ffffff;
+  padding: 20px 24px;
+  position: relative;
+}
+.form-header h4 {
+  font-size: 18px;
+  color: var(--emaar-accent-3);
+}
+.arrow-icon {
+  font-size: 34px;
+  opacity: 0.8;
+  transform: rotate(-44deg);
+  position: absolute;
+  right: 15px;
+}
+.form-control {
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: var(--emaar-accent-1);
+}
+.inquiry-btn {
+  background: #c9f7a7;
+  color: #0f3d3a;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+}
+.inquiry-btn:hover {
+  background: #b6f28d;
+}
+.privacy-text {
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+.privacy-text a {
+  color: var(--emaar-accent-1);
+  text-decoration: none;
+}
+
+/* =====================================
+    Footer
+===================================== */
+.disclaimer-block{
+  text-align: center;
+  padding: 0px 0px 40px 0px;
+}
+.footer-logo{
+  height: 100px;
+  margin: 0px 0px 30px 0px; 
+}
+.disclaimer-block p{
+  font-weight: 500;
+  color: var(--emaar-accent-1)
+}
+.footer-link{
+  list-style: none;
+  margin: 20px 0px 0px 0px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+.footer-link li:nth-child(1){
+  border-right: 1px solid var(--emaar-accent-1);
+  padding-right: 10px;
+}
+.footer-link li a{
+  border: 1px solid var(--emaar-accent-1);
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.copyrighttext{
+  text-align: center;
+  font-size: 12px;
+  padding: 50px 0px 0px 0px;
+  display: block;
+}
+.copyright{
+  background: var(--emaar-accent-1);
+  padding: 10px 0px;
+}
+
+/* =========================
+   Responsive Tweaks
+========================= */
+
+@media only screen and (max-width: 767px) {
+  h1{
+    font-size: 36px;
+  }
+  h2{
+    font-size: 32px;
+  }
+  p{
+    font-size: 15px;
+  }
+  section.section{
+    padding: 50px 0px;
+  }
+  .navbar{
+    margin: 10px 10px;
+    padding: 5px 0px;
+  }
+  header.header{
+    top: 0px;
+  }
+  .navbar a.btn.fill-btn{
+    display: none !important;
+  }
+  button.navbar-toggler:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+  button.navbar-toggler{
+    padding: 0;
+    border: none;
+  }
+  header.header .navbar .nav-link{
+    padding: 10px 0px !important;
+    border-bottom: 1px solid var(--emaar-accent-3);
+  }
+  .hero-section:before{
+    bottom: 0;
+  }
+  .hero-content {
+      position: relative;
+      padding-bottom: 30px;
+  }
+  /*heading*/
+  .sec-sub-heading{
+    margin: 0px 0px 20px 0px;
+  }
+  .heading-flex{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .heading-title {
+    flex: 0 0 100%;
+  }
+  .heading-title h2 {
+      line-height: 2.5rem;
+  }
+  .hero-sub-heading-title {
+      font-size: 23px;
+  }
+  section.about {
+      padding: 50px 0px 0px 0px;
+  }
+  .about-d-flx {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 40px;
+      grid-row-gap: 40px;
+      margin: 0px 0px 50px 0px;
+  }
+  .about-d-content h5{
+    font-size: 15px;
+  }
+  .about-sc-img img {
+    min-height: 300px;
+    object-fit: cover;
+  }
+  .btn-position-bottomleft {
+    position: absolute;
+    bottom: 11px;
+    left: 10px;
+  }
+  /*experience sec*/
+  .experiencecard{
+    min-height: 180px;
+  }
+  .schedule-card h2{
+    font-size: 28px;
+  }
+  /*payment*/
+  section.paymentplan-sc{
+    padding: 0px 0px 50px 0px;
+  }
+  .button-group-block{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-row-gap: 20px;
+    padding: 30px 0px 30px 0px;
+  }
+  .button-group-block .btn{
+    width: 250px;
+  }
+  .paymentplan-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .paymentplan-block h2 {
+    width: 100%;
+  }
+  .paymentplan-block h2::after {
+    display: none;
+  }
+  /*location*/
+  .location-item{
+    justify-content: flex-start;
+  }
+  .location-inner p{
+    line-height: 23px;
+  }
+  section.location-sc{
+    padding-bottom: 0;
+  }
+  /*contact*/
+  .heading-center .heading-flex{
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 991px) {
+  .location-item:not(:last-child) {
+    border-right: none;
+  }
+  .form-header {
+    justify-content: center;
+  }
+  .arrow-icon {
+    display: none;
+  }
+
+}
+@media (max-width: 575px) {
+  .location-inner strong {
+    font-size: 38px;
+  }
+}
+
+
