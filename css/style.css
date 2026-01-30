@@ -20,6 +20,7 @@
   /* Fonts */
   --font-primary: "DM Sans", sans-serif;
   --font-secondary: "Forum", sans-serif;
+  --font-playfair-italic: 'Playfair Display', serif;
 }
 
 /* =====================================
@@ -158,26 +159,19 @@ header.header.header-scrolled .navbar .navbar-brand{
     Hero section
 ===================================== */
 .hero-section{
-  background: url('../img/hero-Emaar.jpg');
+  background: url('../img/hero-banner.png');
   background-size: cover;
   background-position: center center;
-  min-height: clamp(300px, 90vh, 830px);
+  min-height: clamp(300px, 100vh, 830px);
   position: relative;
   display: flex;
   align-items: end;
-}
-.hero-section:before{
-  background-image: linear-gradient(190deg, #134A4700 25% 25%, #0F3D3AF2 95%);
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
 }
 .hero-content{
   position: relative;
   padding-bottom: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .hero-text-wrap{
   display: flex;
@@ -190,9 +184,8 @@ header.header.header-scrolled .navbar .navbar-brand{
   font-size: 45px;
 }
 .hero-text-wrap img{
-  height: 30px;
-  width: fit-content;
   margin:0px 0px 25px 0px;
+  max-width: 300px;
 }
 .hero-sub-heading-title{
   font-size: 30px !important;  
@@ -315,8 +308,8 @@ section.about{
 }
 .about-detail-section{
   background: var(--emaar-accent-3);
-  padding: 50px 0px 0px 0px;
-  margin: 50px 0px 0px 0px;
+  padding: 150px 0px 50px 0px;
+  margin: -84px 0px 0px 0px;
 }
 .about-d-flx{
   display: grid;
@@ -759,8 +752,10 @@ footer{
     padding: 50px 0px;
   }
   .navbar{
-    margin: 10px 10px;
+    margin: 0;
     padding: 5px 0px;
+    border-radius: 0;
+    background: var(--emaar-accent-6) !important;
   }
   .navbar .container{
     justify-content: center;
@@ -781,21 +776,28 @@ footer{
     border: none;
     display: none;
   }
+  .navbar .navbar-brand{
+    color: var(--emaar-accent-5);
+    margin: 0 0;
+  }
   header.header .navbar .nav-link{
     padding: 10px 0px !important;
     border-bottom: 1px solid var(--emaar-accent-3);
   }
   .hero-section{
-    min-height: clamp(300px, 95vh, 830px);
+    min-height: clamp(300px, 50vh, 830px);
+    align-items: flex-start;
+    padding: 20px 0px 0px 0px;
+    justify-content: center;
+    margin-top: 46px;
   }
   .hero-section:before{
     bottom: 0;
     height: 522px;
   }
   .hero-text-wrap img {
-      height: 30px;
-      width: max-content;
-      margin: 0px 0px 15px 0px;
+      max-width: 200px;
+      margin: auto;
   }
   .hero-wrapper .hero-text-wrap .btn{
     display: none !important;
@@ -843,7 +845,7 @@ footer{
       font-size: 23px !important;
   }
   section.about {
-      padding: 100px 0px 0px 0px;
+      padding: 50px 0px 0px 0px;
   }
   .about-d-flx {
       display: grid;
@@ -856,13 +858,44 @@ footer{
     font-size: 15px;
   }
   .about-sc-img img {
-    min-height: 300px;
+    min-height: 177px;
     object-fit: cover;
+  }
+  .about-sc-img{
+    padding: 0px 20px;
   }
   .btn-position-bottomleft {
     position: absolute;
     bottom: 11px;
-    left: 10px;
+    left: 33px;
+  }
+  .fill-btn{
+    padding: 8px 12px;
+    font-style: 12px;
+  }
+  .section.about .sec-sub-heading{
+    text-align: center;
+    max-width: 100px;
+    margin: auto;
+    border-right: 3px solid var(--emaar-accent-1);
+  }
+  .section.about .heading-flex{
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px 0px 0px;
+  }
+  .section.about .heading-flex .heading-title h2{
+    text-align: center;
+    font-family: var(--font-playfair-italic);
+  }
+  .section.about .heading-flex .heading-para p{
+    text-align: center;
+    font-style: 14px;
+    padding: 30px 20px;
+  }
+  .about-detail-section {
+    padding: 111px 0px 50px 0px;
+    margin: -118px 0px 0px 0px;
   }
   /*experience sec*/
   .experiencecard{
