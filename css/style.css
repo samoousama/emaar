@@ -898,6 +898,9 @@ footer{
     margin: -118px 0px 0px 0px;
   }
   /*experience sec*/
+  .experience-section{
+    background: var(--emaar-accent-4);
+  }
   .experiencecard{
     min-height: 180px;
   }
@@ -911,6 +914,30 @@ footer{
   }
   .schedule-card h2{
     font-size: 28px;
+  }
+  .experience-section .heading-para{
+    display: none;
+  }
+  .experience-section .heading-flex{
+      justify-content: center;
+  }
+  .experience-section .heading-title{
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .experience-section .sec-sub-heading{
+    display: none;
+  }
+  .experience-section .heading-title h2{
+    font-size: 25px;
+    font-family: var(--font-playfair-italic);
+  }
+  .experience-section .heading-title h2 br{
+    display: none;
+  }
+  .experiencecard{
+    margin-bottom: 10px;
   }
   /*payment*/
   section.paymentplan-sc{
