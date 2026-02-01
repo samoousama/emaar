@@ -99,3 +99,19 @@ jQuery(document).ready(function($) {
     }
   });
 });
+
+
+const mainImg = document.querySelector('.mobile-main')
+const thumbs = document.querySelectorAll('.mobile-thumbs img')
+
+thumbs.forEach(img => {
+  img.addEventListener('click', () => {
+    thumbs.forEach(t => t.classList.remove('active'))
+    img.classList.add('active')
+    mainImg.style.opacity = 0
+    setTimeout(() => {
+      mainImg.src = img.src
+      mainImg.style.opacity = 1
+    }, 150)
+  })
+})
