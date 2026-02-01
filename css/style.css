@@ -483,12 +483,15 @@ section.gallery{
 .mobile-wrapper {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 .mobile-main {
   width: 100%;
   display: block;
   transition: opacity .3s ease;
   border-radius: 10px;
+  min-height: 400px;
+  object-fit: cover;
 }
 .mobile-thumbs {
   display: flex;
@@ -507,6 +510,25 @@ section.gallery{
 }
 .mobile-thumbs img.active {
   opacity: 1;
+}
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+.gallery-nav.prev {
+  left: 10px;
+}
+
+.gallery-nav.next {
+  right: 10px;
 }
 
 

@@ -103,15 +103,34 @@ jQuery(document).ready(function($) {
 
 const mainImg = document.querySelector('.mobile-main')
 const thumbs = document.querySelectorAll('.mobile-thumbs img')
+const prev = document.querySelector('.prev')
+const next = document.querySelector('.next')
 
-thumbs.forEach(img => {
+let index = 0
+
+function updateImage(i) {
+  thumbs.forEach(t => t.classList.remove('active'))
+  thumbs[i].classList.add('active')
+  mainImg.style.opacity = 0
+  setTimeout(() => {
+    mainImg.src = thumbs[i].src
+    mainImg.style.opacity = 1
+  }, 150)
+}
+
+thumbs.forEach((img, i) => {
   img.addEventListener('click', () => {
-    thumbs.forEach(t => t.classList.remove('active'))
-    img.classList.add('active')
-    mainImg.style.opacity = 0
-    setTimeout(() => {
-      mainImg.src = img.src
-      mainImg.style.opacity = 1
-    }, 150)
+    index = i
+    updateImage(index)
   })
+})
+
+prev.addEventListener('click', () => {
+  index = index === 0 ? thumbs.length - 1 : index - 1
+  updateImage(index)
+})
+
+next.addEventListener('click', () => {
+  index = index === thumbs.length - 1 ? 0 : index + 1
+  updateImage(index)
 })
