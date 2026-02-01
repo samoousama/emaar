@@ -504,7 +504,6 @@ section.gallery{
 .mobile-thumbs img {
   width: 110px;
   cursor: pointer;
-  opacity: .5;
   transition: .3s;
   flex-shrink: 0;
 }
@@ -952,6 +951,7 @@ footer{
   .about-detail-section {
     padding: 111px 0px 50px 0px;
     margin: -118px 0px 0px 0px;
+    background: transparent;
   }
   /*experience sec*/
   .experience-section{
