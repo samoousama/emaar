@@ -127,8 +127,14 @@ header.header.header-scrolled{
 header.header.header-scrolled .navbar .nav-link{
   color: var(--emaar-accent-5);
 }
+header.header.header-scrolled .navbar .nav-link:hover{
+  background: var(--theme-bg) !important;
+}
 header.header.header-scrolled .navbar .navbar-brand{
   color: var(--emaar-accent-5);
+}
+header.header.header-scrolled .navbar-brand img{
+  filter: brightness(100);
 }
 .fill-btn{
   padding:12px 12px;
@@ -795,6 +801,9 @@ footer{
   .navbar .container{
     justify-content: center;
   }
+  .navbar .navbar-brand img{
+    filter: brightness(100);
+  }
   header.header{
     top: 0px;
   }
@@ -820,11 +829,18 @@ footer{
     border-bottom: 1px solid var(--emaar-accent-3);
   }
   .hero-section{
-    min-height: clamp(300px, 50vh, 830px);
+    min-height: clamp(300px, 65vh, 830px);
     align-items: flex-start;
     padding: 20px 0px 0px 0px;
     justify-content: center;
     margin-top: 46px;
+  }
+  .heroplan-main {
+    padding: 120px 15px 0px 15px;
+  }
+  .hero-wrapper{
+    min-height: auto;
+    background: transparent;
   }
   .hero-section:before{
     bottom: 0;
@@ -880,7 +896,7 @@ footer{
       font-size: 23px !important;
   }
   section.about {
-      padding: 50px 0px 0px 0px;
+      padding: 80px 0px 0px 0px;
   }
   .about-d-flx {
       display: grid;
@@ -897,7 +913,7 @@ footer{
     object-fit: cover;
   }
   .about-sc-img{
-    padding: 0px 20px;
+    padding: 0px 0px;
   }
   .btn-position-bottomleft {
     position: absolute;
@@ -908,25 +924,22 @@ footer{
     padding: 8px 12px;
     font-style: 12px;
   }
-  .section.about .sec-sub-heading{
-    text-align: center;
-    max-width: 100px;
-    margin: auto;
-    border-right: 3px solid var(--emaar-accent-1);
-  }
   .section.about .heading-flex{
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0px 0px 0px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px 0px 0px 0px;
+    grid-row-gap: 0px;
   }
   .section.about .heading-flex .heading-title h2{
-    text-align: center;
-    font-family: var(--font-playfair-italic);
+    text-align: left;
   }
   .section.about .heading-flex .heading-para p{
-    text-align: center;
+    text-align: left;
     font-style: 14px;
-    padding: 30px 20px;
+    padding: 15px 0px;
+  }
+  section.about .heading-flex .heading-para {
+    padding: 0px 0px 0px 0px;
   }
   .about-detail-section {
     padding: 111px 0px 50px 0px;
@@ -975,9 +988,12 @@ footer{
   .experiencecard{
     margin-bottom: 10px;
   }
+  .schedule-card{
+    min-height: 217px;
+  }
   /*payment*/
   section.paymentplan-sc{
-    padding: 0px 0px 50px 0px;
+    padding: 50px 0px 50px 0px;
   }
   .button-group-block{
     flex-direction: column;
@@ -1046,6 +1062,10 @@ footer{
   }
   .sales-inquiry-section{
     padding-bottom: 0px !important;
+    padding-top: 20px !important;
+  }
+  .inquiry-wrapper{
+    padding: 0px 15px;
   }
   /*gallery*/
   .lux-item img{
