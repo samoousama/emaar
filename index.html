@@ -15,11 +15,11 @@
 <body>
 
     <!-- header -->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg bg-white">
+    <header class="header bg-white">
+      <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand fw-semibold" href="#">
-            Emaar
+            <img src="img/emaar-logo.png" alt="Logo">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -53,13 +53,55 @@
     <!-- hero section -->
 
     <section class="hero-section">
-      <div class="container">
-        <div class="hero-wrapper">
-          <div class="hero-content">
-            <div class="hero-text-wrap">
-              <img src="img/banner-logo.png" alt="Banner Logo">
-            </div>             
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-12 colset">
+            <div class="hero-wrapper">
+              <div class="hero-content">
+                <div class="hero-text-wrap">
+                  <img src="img/banner-logo.png" alt="Banner Logo">
+                    <a href="#" class="content-btn btn btn-success rounded-2 d-flex align-items-center fill-btn">
+                      Register your interest
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                </div>             
+              </div>
+            </div>
           </div>
+          <!-- col 4 -->
+          <div class="col-lg-8 col-md-8 col-sm-12 col-12 colset">
+            <div class="heroplan-main">
+              <div class="hero-payment-plan">
+                <div class="hero-plan-block">
+                  <div class="heroblock-text1">
+                    <h2>3 &amp; 4 BR</h2>
+                    <div>Spacious Townhouses &amp; Luxury Villas</div>
+                  </div>
+                  <div class="heroblock-text2">
+                    <h3><span class="pprojet-price">Emaar New Launch
+                    </span>Limited Availability</h3>
+                  </div>
+                </div>
+                <div class="hero-plan-block">
+                  <div class="heroblock-text1">
+                    <h2>80/20</h2>
+                    <div>Payment Plan</div>
+                  </div>
+                  <div class="heroblock-text2">
+                    <h3><span class="pprojet-price">Starting Price
+                    </span>Upon Request</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- col 8 -->
         </div>
       </div>
     </section>
@@ -68,35 +110,39 @@
 
     <section class="section about" id="about">
       <div class="container">
-        <div class="section-heading">
-          <span class="sec-sub-heading">Overview</span>
-          <div class="heading-flex">
-            <div class="heading-title">
-              <h2>Redefining Luxury <br/> Waterside Living</h2>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="section-heading">
+              <span class="sec-sub-heading">Overview</span>
+              <div class="heading-flex">
+                <div class="heading-title">
+                  <h2>Redefining Luxury <br/> Waterside Living</h2>
+                </div>
+                <div class="heading-para">
+                  <p>A picturesque landscape adorned with interconnected  waterways, where gentle streams wind through the heart of the  community, Palmiera Collective at The Oasis presents a  mesmerizing tapestry of water elements, creating an  enchanting ambiance that captivates the senses</p>
+                </div>
+              </div>
             </div>
-            <div class="heading-para">
-              <p>A picturesque landscape adorned with interconnected  waterways, where gentle streams wind through the heart of the  community, Palmiera Collective at The Oasis presents a  mesmerizing tapestry of water elements, creating an  enchanting ambiance that captivates the senses</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="about-detail-section">
-        <div class="container">
-          <div class="about-sc-img">
-          <img src="img/overview-bg.png" alt="overview">
-          <div class="btn-position-bottomleft">
-            <a href="#" class="content-btn btn btn-success rounded-2 d-flex align-items-center fill-btn">
-              Register your interest
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M19 12L13 6M19 12L13 18"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+          </div> <!-- 6 -->
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="about-detail-section">
+              <div class="about-sc-img">
+                <img src="img/overview-bg.png" alt="overview">
+                  <div class="btn-position-bottomleft">
+                    <a href="#" class="content-btn btn btn-success rounded-2 d-flex align-items-center fill-btn">
+                      Register your interest
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+             </div>
+          </div> <!-- 6 -->
         </div>
       </div>
     </section>
@@ -109,9 +155,6 @@
           <div class="heading-flex">
             <div class="heading-title">
               <h2>Community-Oriented <br/> Living</h2>
-            </div>
-            <div class="heading-para">
-              <p>The Heights Country Club & Wellness by Emaar offers a <b>carefully curated</b> range of amenities designed to support everyday comfort, wellness, and community living. Every space is thoughtfully planned to enhance convenience, relaxation, and <b>quality of life</b> for residents.</p>
             </div>
           </div>
         </div>
@@ -196,44 +239,36 @@
 
     <!-- gallery -->
     <section class="section gallery" id="gallery">
-      <div class="container-full">
-        <div class="lux-gallery hide-mobile">
-          <div class="lux-gallery-track">
-            <div class="lux-item">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="">
-            </div>
-            <div class="lux-item">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80" alt="">
-            </div>
-            <div class="lux-item">
-              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80" alt="">
-            </div>
-            <div class="lux-item">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="">
-            </div>
-            <div class="lux-item">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80" alt="">
-            </div>
-          </div>
-        </div>
-
+      <div class="container">
         <!-- mobile-gallery -->
-        <div class="mobile-gallery hide-desktop">
+
+        <div class="mobile-gallery">
           <div class="mobile-wrapper">
             <button class="gallery-nav prev">&#10094;</button>
+
+            <div class="mobile-main-track">
               <img src="img/doorstep.png" class="mobile-main">
+              <img src="img/hero-banner.png" class="mobile-main">
+              <img src="img/pools.png" class="mobile-main">
+              <img src="img/vella.png" class="mobile-main">
+              <img src="img/hero-Emaar.jpg" class="mobile-main">
+            </div>
+
             <button class="gallery-nav next">&#10095;</button>
           </div>
-          <div class="mobile-thumbs">
-            <img src="img/doorstep.png" class="active">
-            <img src="img/hero-banner.png">
-            <img src="img/pools.png">
-            <img src="img/vella.png">
-            <img src="img/hero-Emaar.jpg">
+
+          <div class="mobile-thumbs-wrapper">
+            <div class="mobile-thumbs">
+              <img src="img/doorstep.png" class="active">
+              <img src="img/hero-banner.png">
+              <img src="img/pools.png">
+              <img src="img/vella.png">
+              <img src="img/hero-Emaar.jpg">
+            </div>
           </div>
         </div>
-        <!-- end -->
 
+        <!-- end -->
       </div>
     </section>
 
@@ -242,10 +277,12 @@
     <!-- Emaar The Heights Payment Plan -->
     <section class="section paymentplan-sc" id="paymentplan">
       <div class="container">
+        <div class="section-heading">
+         <span class="sec-sub-heading">Emaar The Heights Payment Plan</span>
+        </div>
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="section-heading paymentplan-content">
-              <span class="sec-sub-heading">Emaar The Heights Payment Plan</span>
               <div class="paymentcontent-block">
                 <div class="heading-title">
                   <h2>Book with Just 10% <br/> Down Payment</h2>
@@ -395,9 +432,6 @@
         <div class="sales-inquiry-section py-5">
           <div class="row inquiry-wrapper">
           <div class="col-12 col-lg-6 mx-auto inquiry-form">
-            <div class="form-header d-flex align-items-center justify-content-between">
-              <h4 class="mb-0">please submit your request below, and our professional team will reach out to your promptly with compreshesive details</h4>
-            </div>
             <form class="p-4">
               <div class="mb-3">
                 <label>Name</label>
@@ -431,7 +465,7 @@
     <footer>
       <div class="container">
         <div class="disclaimer-block">
-          <img src="img/footer-logo.png" alt="Footer Logo" class="footer-logo">
+          <img src="img/emaar-logo.png" alt="Footer Logo" class="footer-logo">
           <p>Disclaimer: This website is managed by Aeon & Trisl, a registered broker of Emaar Properties.</p>
           <ul class="footer-link">
             <li><a href="">Terms & Conditions</a></li>

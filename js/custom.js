@@ -1,60 +1,3 @@
-const gallery = document.querySelector('.lux-gallery');
-const track = gallery.querySelector('.lux-gallery-track');
-const items = gallery.querySelectorAll('.lux-item');
-let scrollAmount = 0;
-const speed = 0.5; // adjust auto-scroll speed
-let isPaused = false;
-
-// -------------------------
-// 1. Duplicate items for seamless loop
-track.innerHTML += track.innerHTML;
-
-// -------------------------
-// 2. Auto-scroll function
-function autoScroll() {
-  if (!isPaused) {
-    scrollAmount += speed;
-    if (scrollAmount >= track.scrollWidth / 2) scrollAmount = 0;
-    track.style.transform = `translateX(-${scrollAmount}px)`;
-    updateActiveCenter(); // update active image brightness
-  }
-  requestAnimationFrame(autoScroll);
-}
-autoScroll();
-
-// -------------------------
-// 3. Pause auto-scroll on hover
-gallery.addEventListener('mouseenter', () => { isPaused = true; });
-gallery.addEventListener('mouseleave', () => { isPaused = false; });
-
-// -------------------------
-// 4. Custom cursor inside gallery
-const cursor = document.createElement('div');
-cursor.classList.add('custom-cursor');
-gallery.appendChild(cursor);
-
-// Move cursor with mouse inside gallery
-gallery.addEventListener('mousemove', (e) => {
-  const rect = gallery.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  cursor.style.left = `${x}px`;
-  cursor.style.top = `${y}px`;
-});
-
-// Cursor hover interaction on images
-const images = gallery.querySelectorAll('.lux-item img');
-images.forEach(img => {
-  img.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1.2)';
-    cursor.style.background = 'rgba(31,110,105,0.1)';
-  });
-  img.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    cursor.style.background = 'transparent';
-  });
-});
-
 // -------------------------
 // 5. Brighten active/hovered image
 function updateActiveCenter() {
@@ -101,36 +44,82 @@ jQuery(document).ready(function($) {
 });
 
 
-const mainImg = document.querySelector('.mobile-main')
-const thumbs = document.querySelectorAll('.mobile-thumbs img')
+const mainTrack = document.querySelector('.mobile-main-track')
+const mains = document.querySelectorAll('.mobile-main')
+const thumbsTrack = document.querySelector('.mobile-thumbs')
+let thumbs = Array.from(document.querySelectorAll('.mobile-thumbs img'))
 const prev = document.querySelector('.prev')
 const next = document.querySelector('.next')
 
 let index = 0
+const gap = 10
 
-function updateImage(i) {
-  thumbs.forEach(t => t.classList.remove('active'))
-  thumbs[i].classList.add('active')
-  mainImg.style.opacity = 0
-  setTimeout(() => {
-    mainImg.src = thumbs[i].src
-    mainImg.style.opacity = 1
-  }, 150)
+/* ===== CLONE THUMBS (for infinite feel) ===== */
+const cloneBefore = thumbs.map(t => t.cloneNode(true))
+const cloneAfter  = thumbs.map(t => t.cloneNode(true))
+
+cloneBefore.forEach(c => thumbsTrack.prepend(c))
+cloneAfter.forEach(c => thumbsTrack.append(c))
+
+thumbs = Array.from(document.querySelectorAll('.mobile-thumbs img'))
+
+const realCount = mains.length
+const startIndex = realCount
+index = startIndex
+
+/* ===== SET INITIAL POSITION ===== */
+function getThumbWidth() {
+  return thumbs[0].offsetWidth + gap
 }
 
-thumbs.forEach((img, i) => {
-  img.addEventListener('click', () => {
-    index = i
-    updateImage(index)
-  })
+function setThumbPosition(noAnim = false) {
+  const offset = getThumbWidth() * (index - 1)
+  thumbsTrack.style.transition = noAnim ? 'none' : 'transform .4s ease'
+  thumbsTrack.style.transform = `translateX(-${offset}px)`
+}
+
+/* ===== UPDATE ===== */
+function updateGallery(i) {
+  index = i
+
+  // main slide (real images only)
+  const realIndex = (index - startIndex + realCount) % realCount
+  mainTrack.style.transform = `translateX(-${realIndex * 100}%)`
+
+  // active thumb
+  thumbs.forEach(t => t.classList.remove('active'))
+  thumbs[index].classList.add('active')
+
+  setThumbPosition()
+}
+
+/* ===== LOOP FIX (no ends) ===== */
+thumbsTrack.addEventListener('transitionend', () => {
+  if (index <= realCount - 1) {
+    index += realCount
+    setThumbPosition(true)
+  }
+
+  if (index >= realCount * 2) {
+    index -= realCount
+    setThumbPosition(true)
+  }
 })
 
-prev.addEventListener('click', () => {
-  index = index === 0 ? thumbs.length - 1 : index - 1
-  updateImage(index)
+/* ===== EVENTS ===== */
+thumbs.forEach((thumb, i) => {
+  thumb.addEventListener('click', () => updateGallery(i))
 })
 
-next.addEventListener('click', () => {
-  index = index === thumbs.length - 1 ? 0 : index + 1
-  updateImage(index)
-})
+prev.addEventListener('click', () => updateGallery(index - 1))
+next.addEventListener('click', () => updateGallery(index + 1))
+
+/* ===== INIT ===== */
+setThumbPosition(true)
+updateGallery(startIndex)
+
+
+window.addEventListener('load', function() {
+  const firstBox = document.querySelector('.hero-payment-plan .hero-plan-block:nth-child(1)');
+  firstBox.classList.add('active');
+});
